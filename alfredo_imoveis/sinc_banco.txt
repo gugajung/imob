@@ -1,3 +1,5 @@
+Não usar mais esse script
+
 rm -rf enderecos/migrations
 rm -rf parametros/migrations
 rm -rf empresas/migrations
