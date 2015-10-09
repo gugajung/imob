@@ -30,6 +30,8 @@ else:
 DEBUG = not ON_PAAS
 DEBUG = DEBUG or os.getenv("debug","false").lower() == "true"
 
+DEBUG = True
+
 if ON_PAAS and DEBUG:
     print("*** Warning - Debug mode is on ***")
 
@@ -40,7 +42,6 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = (
-    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
