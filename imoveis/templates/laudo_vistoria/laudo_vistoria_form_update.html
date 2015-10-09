@@ -1,0 +1,44 @@
+{% extends "template_base.html" %}
+{% block titulo %}
+{% load bootstrap %}
+   Alfredo imóveis - Clientes
+{% endblock %}
+
+{% block conteudo %}
+    <h1>Edição de laudos de vistoria</h1>
+    {% if mensagem %}
+        <br/>
+        <div class="alert alert-info fade in">
+            {{mensagem}}
+        </div>
+    {% endif%}
+
+    {% if erros %}
+    <br/>
+    <div class="alert alert-danger fade in">
+        {{erros}}
+    </div>
+    {% endif%}
+
+<div class="container">
+    <div class="row">
+        
+    <form method="POST" action="{% url 'app_imoveis_laudo_vistoria_update' object.id %}">
+        {% csrf_token %}
+        {{form|bootstrap}}
+        <br/>
+        <br/>
+        
+    {% if modo == 'EDICAO' %}    
+        <button type="submit" class="btn btn-info">Salvar</button>
+    {% else %}
+        <a href="{% url 'app_imoveis_laudo_vistoria_update' object.id %}" class="btn btn-info">Editar</a>
+    {% endif %}
+        <a href="{% url 'app_imoveis_laudo_vistoria_imprimir' object.id %}" type="submit" class="btn btn-success">Imprimir laudo</a>
+        <a href="{% url 'app_imoveis_laudo_vistoria_delete' object.id %}" type="submit" class="btn btn-danger">Deletar</a>
+    </form>
+        
+    </div>
+</div>
+{% endblock %}
+

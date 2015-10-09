@@ -1,0 +1,40 @@
+{% extends "template_base.html" %}
+{% load bootstrap %}
+{% block titulo %}
+   Alfredo imóveis - Documentos a pagar ou receber
+{% endblock %}
+
+{% block conteudo %}
+
+{% if mensagem_erro %}
+    <div class="alert alert-dismissable alert-danger">
+        {{mensagem_erro}}
+    </div>
+{% endif %}
+
+    <h2>Novo documento a pagar ou receber</h2>
+
+    {% if mensagem %}
+        <br/>
+        <div class="alert alert-info fade in">
+            {{mensagem}}
+        </div>
+    {% endif%}
+
+    {% if erros %}
+    <br/>
+    <div class="alert alert-danger fade in">
+        {{erros}}
+    </div>
+    {% endif%}
+   
+    <form method="POST" action="{% url 'app_financeiro_titulo_salvar' 0 %}">
+        {% csrf_token %}
+        {% include 'financeiro/titulo/form_titulo.html' %}
+        <br/>
+        <br/>
+        <button type="submit" class="btn btn-info">Salvar</button>
+    </form>
+
+{% endblock %}
+

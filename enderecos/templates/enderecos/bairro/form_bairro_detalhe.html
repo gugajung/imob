@@ -1,0 +1,22 @@
+{% load bootstrap %}
+<div class="row">
+
+    <div class="col-lg-4">
+        <h1>Bairros</h1>
+        <br/>
+        <form action="{% url 'app_enderecos_bairro_update' bairro.id %}" method="POST">
+            {% csrf_token %}
+            {{form|bootstrap}}
+            
+            {% if modo == 'EDICAO' %}
+                <input type="submit" class="btn btn-info" value="Salvar">
+            {% else %}
+                <a type="button" href="{% url 'app_enderecos_bairro_form_edicao' bairro.id %}" 
+                 class="btn btn-info">Editar</a>
+            {% endif %}
+            
+            <a type="button" href="{% url 'app_enderecos_bairro_delete' bairro.id %}" 
+                 class="btn btn-danger">Deletar</a>
+        </form>
+    </div>
+</div>

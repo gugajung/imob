@@ -1,0 +1,18 @@
+{% extends "template_base.html" %}
+
+{% block titulo %}
+   {{nome_empresa}} - Dashboard
+{% endblock %}
+
+{% block conteudo %}
+    
+    {% if mensagem %}
+        <div class="alert alert-dismissable alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            {{mensagem}}
+        </div>
+    {% endif %}
+
+    {% include 'painel_principal.html' %}
+{% endblock %}
+

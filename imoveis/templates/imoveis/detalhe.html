@@ -1,0 +1,83 @@
+{% extends "template_base.html" %}
+{% load bootstrap %}
+{% block titulo %}
+   Alfredo imóveis - Clientes
+{% endblock %}
+
+{% block shortcuts %}
+    <!--switch(keynum) {
+        case 113:
+            document.getElementById('editar').click();  
+            break;
+        case 115:
+            document.getElementById('salvar').click();  
+            break;
+        default:      
+    }-->
+{% endblock %}
+
+
+{% block conteudo %}
+    <h1>Edição de imóvel</h1>
+    <h4>Código deste imóvel: {{imovel.id}}</h4>
+    {% if mensagem %}
+        <br/>
+        <div class="alert alert-info fade in">
+            {{mensagem}}
+        </div>
+    {% endif%}
+
+    {% if erros %}
+    <br/>
+    <div class="alert alert-danger fade in">
+        {{erros}}
+    </div>
+    {% endif%}
+    <form method="POST"
+          action="{% url 'app_imoveis_salvar' imovel.id %}">
+        {% csrf_token %}
+        {% include 'imoveis/form_imovel.html' %}
+        <br/>
+        
+        {% if modo == 'EDICAO' %}
+            <button type="submit" class="btn btn-info" id="salvar">Salvar</button>
+        {% else %}
+            <a href="{% url 'app_imoveis_editar' imovel.id %}" class="btn btn-info" id='editar'>Editar</a>
+        {% endif %}
+
+
+
+        {% include 'imoveis/modalExcluiImovel.html' %}
+        <a href="{% url 'app_imoveis_ficha' imovel.id %}" type="button" class="btn btn-success">Imprimir ficha do imóvel</a>
+        <a href="{% url 'app_imoveis_laudo_vistoria_add_imovel' imovel.id %}" type="submit" class="btn btn-info">Laudo de vistoria</a>
+
+        Data do cadastro: {{imovel.data_cadastro}}<br>
+        <br>
+        {% if imovel.data_last_pag_iptu %}
+            <div class="alert alert-success fade in">
+                    <p><strong>Data do último pagamento de IPTU: </strong>{{imovel.data_last_pag_iptu}}</p> 
+            </div>
+        {% else %}
+            <div class="alert alert-danger fade in">
+                <p>Data do último pagamento de IPTU não informado</p>
+            </div>
+        {% endif %}
+
+    </form>
+
+    <br>
+    <br>
+    <br>
+    {% if laudo_vistoria %}
+        <h3>Laudos de vistoria para este imóvel</h3>
+        {% for laudo in laudo_vistoria %}
+            <a href="{% url 'app_imoveis_laudo_vistoria_update' laudo.id %}">{{laudo}}</a><br>
+        {% endfor %}
+    {% else %}
+        <h3>Este imóvel não possui laudos de vistoria cadastrados</h3>
+    {% endif %}
+    <br>
+    <br>
+    <br>
+{% endblock %}
+

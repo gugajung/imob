@@ -1,0 +1,44 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Consultar contratos de locação</h3>
+    </div>
+    <div class="panel-body">
+        <form method="POST" action="{% url 'app_imoveis_contrato_filtrar' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>Selecione um imóvel</label>
+                    <select class="form-control" name="imovel">
+                        <option class="form-control" value="0" selected="selected">Selecione um imóvel</option>
+                        {% for imovel in imoveis%}
+                            <option class="form-control" value="{{imovel.id}}">{{imovel.descricao}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-sm-3">
+                    <label>Selecione um locatário</label>
+                    <select class="form-control" name="cliente">
+                        <option class="form-control" value="0" selected="selected">Selecione um locatário</option>
+                        {% for cliente in clientes%}
+                            <option class="form-control" value="{{cliente.id}}">{{cliente.nome}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-sm-3">
+                    De: <input class="form-control" name="dataini" id="data_ini">
+                    <label> Início do contrato</label><input type="radio" name="mes" value="cadastro">
+                </div>
+                <div class="col-sm-3">
+                    Até:<input class="form-control" name="datafim" id="data_fim">
+                    <label> Término do contrato</label><input type="radio" name="mes" value="termino">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-info">Pesquisar</button>
+            <label> Gerar relatório  </label>
+            <input type="checkbox" name="relatorio">
+        </form>
+    </div>
+</div>

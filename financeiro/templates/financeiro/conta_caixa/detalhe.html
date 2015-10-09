@@ -1,0 +1,43 @@
+{% extends "template_base.html" %}
+{% load bootstrap %}
+{% block titulo %}
+   Alfredo imóveis - Clientes
+{% endblock %}
+
+{% block conteudo %}
+
+    {% if mensagem %}
+        <br/>
+        <div class="alert alert-info fade in">
+            {{mensagem}}
+        </div>
+    {% endif%}
+
+    {% if erros %}
+    <br/>
+    <div class="alert alert-danger fade in">
+        {{erros}}
+    </div>
+    {% endif%}
+
+    <div class="row">
+        <div class="panel-body">
+            <form method="POST" class="navbar-form navbar-left" role="search"
+                  action="{% url 'app_financeiro_conta_caixa_salvar' conta_caixa.id %}">
+                {% csrf_token %}
+                {{form|bootstrap}}
+                <br/>
+                <br/>
+                
+                {% if modo == 'EDICAO' %}
+                    <button type="submit" class="btn btn-info">Salvar</button>
+                {% else %}
+                    <a href="{% url 'app_financeiro_conta_caixa_editar' conta_caixa.id %}" class="btn btn-info">Editar</a>
+                {% endif %}               
+
+                {% include 'financeiro/conta_caixa/modalExcluiContaCaixa.html' %}
+            </form>
+        </div>
+    </div>
+{% endblock %}
+

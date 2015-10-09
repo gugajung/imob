@@ -1,0 +1,69 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Consultar títulos</h3>
+    </div>
+    <div class="panel-body">
+        <form method="POST" action="{% url 'app_financeiro_titulo_carta_cobranca_filtrar' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Selecione um cliente</label>
+                    <select class="form-control" name="cliente">
+                        <option class="form-control" value="0" selected="selected">Selecione um cliente</option>
+                        {% for cliente in clientes%}
+                            <option class="form-control" value="{{cliente.id}}">{{cliente.nome}}</option>
+                        {% endfor %}
+                    </select>
+                    <br/>
+                </div>
+                <div class="col-sm-3">
+                    De:     <input class="form-control" name="dataini", id="data_ini">
+                </div>
+                <div class="col-sm-3">
+                    Até:<input class="form-control" name="datafim" id="data_fim">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>Informe a descrição do título</label>
+                    <input class="form-control" type="text" name="descricao" placeholder="Descrição">
+                    <label>Escolha o tipo do título</label>
+                    <select class="form-control" name="tipo">
+                        <option class="form-control"></option>
+                        <option class="form-control" value="D" name="despesa">Despesa</option>
+                        <option class="form-control" value="R" name="receita">Receita</option>
+                    </select>
+                    <br/>
+                </div>
+                <div class="col-sm-3">
+                    <label>Selecione a empresa</label>
+                    <input class="form-control" type="text" name="empresa" placeholder="empresa">
+                    <label>Selecione a conta-caixa</label>
+                    <select class="form-control" name="contas_cx">
+                        <option class="form-control" value="0" selected="selected">Selecione uma conta-caixa</option>
+                        {% for conta in contas_caixa%}
+                            <option class="form-control" value="{{conta.id}}">{{conta.descricao}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <label>Informe o valor do título procurado</label>
+                    <input class="form-control" type="number" name="valor_titulo" placeholder="Valor do título">
+                    <br>
+                </div>
+                <div class="col-sm-3">
+                    <label>Escolha o modelo da carta</label>
+                    <select class="form-control" name="modelo_carta">
+                        <option class="form-control"></option>
+                        <option class="form-control" value="M1" name="modelo1" selected="selected">Modelo I</option>
+                        <option class="form-control" value="M2" name="modelo2">Modelo II</option>
+                        <option class="form-control" value="M3" name="modelo3">Modelo III</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-info">Pesquisar</button>
+            <label> Imprimir cartas</label>
+            <input type="checkbox" name="imprimir" >
+        </form>
+    </div>
+</div>

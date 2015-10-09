@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titulo%}{{nome_empresa}} {% endblock %}</title>
+
+    <!-- Bootstrap  css-->
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}bootstrap/css/sb-admin.css" rel="stylesheet">
+    
+    <!-- Bootstrap  Js-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+    <script src="{{STATIC_URL}}bootstrap/js/jquery-1.10.2.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/sb-admin.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/mascaras.js"></script>
+
+    <!--Data table CSS-->
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bootstrap/datatable/jquery.dataTables.css">
+    <!--<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">-->
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bootstrap/datatable/font-awesome-local.css">
+    
+    <link type="text/javascript" language="javascript" href="//cdn.datatables.net/plug-ins/725b2a2115b/sorting/date-dd-MMM-yyyy.js">
+
+    <!--Data table CSS-->
+    <script type="text/javascript" language="javascript" src="{{STATIC_URL}}bootstrap/datatable/jquery.js"></script>
+    <script type="text/javascript" language="javascript" src="{{STATIC_URL}}bootstrap/datatable/jquery.dataTables.js"></script>
+    
+    <!--JQuery Input Mask-->
+    <script type="text/javascript" language="javascript" src="{{STATIC_URL}}bootstrap/datatable/jquery.maskedinput.js"></script>
+    <script type="text/javascript" language="javascript" src="{{STATIC_URL}}bootstrap/js/jquery.maskMoney.js"></script>
+
+    {% block css %}{% endblock %}
+    {% block scripts %}{% endblock %}
+
+    <script type="text/javascript">
+        window.onkeydown = keydown;
+        function keydown(event) {
+            keynum = event.which;
+            switch(keynum) {
+            case 113:
+                window.open("{% url 'app_clientes_novo'%}","_self")
+                break;
+            case 118:
+                window.open("{% url 'app_clientes_home'%}","_self")
+                break;
+            {% block shortcuts %}
+            {% endblock %}   
+            default:              
+           }
+      }
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container theme-showcase" role="main">
+        {% include 'menu_superior.html' %}
+        <br>
+        <br>
+        <br>
+        {% block conteudo%}{% endblock %}
+    </div>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#dataTables-example').dataTable( {
+                "language": {
+                    "url": "{{STATIC_URL}}bootstrap/traducao/dataTables.ptbr.lang"
+                }
+            } );
+        } );
+    </script>
+
+  </body>
+
+<script>
+        jQuery(function($){
+               $("#id_data_nascimento").mask("99/99/9999");
+               $("#id_vencimento").mask("99/99/9999");
+               $("#data_ini").mask("99/99/9999");
+               $("#data_fim").mask("99/99/9999");
+               $("#id_termino_contrato").mask("99/99/9999");
+               $("#id_ultima_vistoria").mask("99/99/9999");
+               $("#id_cep_comercial").mask("99.999-999");
+               $("#id_cep").mask("99.999-999");
+               $("#id_inicio_contrato").mask("99/99/9999");
+               $("#id_celular").mask("(99)9999-9999");
+               $("#id_celular_2").mask("(99)9999-9999");
+               $("#id_telefone_fixo").mask("(99)9999-9999");
+               $("#id_telefone_comercial").mask("(99)9999-9999");
+               $("#id_telefone").mask("(99)9999-9999");
+               $("#id_cnpj_cpf").mask("999.999.999-99");
+               $("#id_cpf").mask("999.999.999-99");
+               $("#id_vencimento_iptu").mask("99/99/9999");
+        });
+</script>
+
+<script type="text/javascript">
+            $(document).ready(function(){ 
+                    $('#id_tipo_pessoa').click(function(){ 
+                            if($('#id_tipo_pessoa :selected').text()=='JURÍDICA' ){
+                                $("#id_cnpj_cpf").mask("9999.9999.9999-99");                
+                            }
+                            else{
+                                $("#id_cnpj_cpf").mask("999.999.999-99");
+                            }
+                    });
+        });
+    </script>
+
+</html>

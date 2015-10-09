@@ -1,0 +1,31 @@
+{% extends "template_base.html" %}
+{% load bootstrap %}
+{% block titulo %}
+   Alfredo imóveis - Clientes
+{% endblock %}
+
+{% block conteudo %}
+    <h1>Novo imóvel</h1>
+
+    {% if mensagem %}
+        <br/>
+        <div class="alert alert-info fade in">
+            {{mensagem}}
+        </div>
+    {% endif%}
+
+    {% if erros %}
+    <br/>
+    <div class="alert alert-danger fade in">
+        {{erros}}
+    </div>
+    {% endif%}
+
+    <form method="POST" action="{% url 'app_imoveis_salvar' 0 %}">
+        {% csrf_token %}
+        {% include 'imoveis/form_imovel.html' %}
+        <button type="submit" class="btn btn-info">Salvar</button>
+    </form>
+    
+{% endblock %}
+

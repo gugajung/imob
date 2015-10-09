@@ -1,0 +1,89 @@
+{% extends "template_base.html" %}
+{% load bootstrap %}
+{% block titulo %}
+   Alfredo imóveis - Contratos de locação
+{% endblock %}
+
+{% block conteudo %}
+<script>
+    function confirmaReceber(gerou) {
+        if (gerou == 'True'){
+            if (confirm("As contas a receber para este contrato já foram geradas, você esta certo de que gostaria de " +
+                        "gerar as contas a receber para este contrato?")){
+                document.getElementById("gera_receber_contrato").click();
+            }
+        }
+        else {
+            if (confirm("Você esta certo de que gostaria de gerar as contas a receber para este contrato?")){
+                document.getElementById("gera_receber_contrato").click();
+            }
+        }
+    }
+    function confirmaRescisaoContrato(cod_contrato) {
+        if (confirm("Você esta certo de que gostaria de rescindir este contrato? ")){
+            document.getElementById("rescindir_contrato").click();
+        }
+    }
+</script>
+
+    {% if mensagem %}
+        <br/>
+        <div class="alert alert-info fade in">
+            {{mensagem}}
+        </div>
+    {% endif%}
+
+    {% if erros %}
+    <br/>
+    <div class="alert alert-danger fade in">
+        {{erros}}
+    </div>
+    {% endif%}
+
+    <div class="row">
+        {% if mens_parcelas %}
+            <div class="alert alert-info fade in">
+                {{mens_parcelas}}
+            </div>
+        {% elif mensagem_erro %}
+            <div class="alert alert-danger fade in">
+                {{mensagem_erro}}
+            </div>
+        {% endif %}
+
+        <div class="panel-body">
+            <form method="POST" action="{% url 'app_imoveis_contrato_salvar' contrato.id %}">
+                {% csrf_token %}
+                {% include 'contrato_locacao/form_contrato_locacao.html' %}
+                <br/>
+                <br/>
+                {% if modo == 'EDICAO' %}
+                    <button type="submit" class="btn btn-info">Salvar</button>
+                {% else %}
+                    <a href="{% url 'app_imoveis_contrato_editar' contrato.id %}" class="btn btn-info">Editar</a>
+                {% endif %}
+
+                {% include 'contrato_locacao/modalExcluiContrato.html' %}
+
+                <a href="{% url 'app_imoveis_contrato_imprimir' contrato.id %}">
+                    <button type="button" class="btn btn-main">Imprimir contrato</button>
+                </a>
+            </form>
+            <br>
+
+                <a href="{% url 'app_imoveis_contrato_gerar_receber' contrato.id %}" id="gera_receber_contrato"></a>
+                <a href="{% url 'app_imoveis_rescindir_contrato' contrato.id %}" id="rescindir_contrato"></a>
+                {% if not contrato.rescisao %}
+                    {% include 'contrato_locacao/modalRescisaoContrato.html' %}
+                    <button type="button" class="btn btn-danger"
+                            onclick="confirmaReceber('{{contrato.gerou_receber}}');">Gerar títulos a receber</button>
+                {% else %}
+                    <h4>Contrato rescindido no dia: {{contrato.rescisao.data}}, pelo motivo: {{contrato.rescisao.motivo}}<br>
+                    pelo usuário: {{contrato.rescisao.usuario.username}}</h4>
+                {% endif %}
+                Data do cadastro: {{contrato.data_emissao_contrato}}
+
+        </div>
+    </div>
+{% endblock %}
+
