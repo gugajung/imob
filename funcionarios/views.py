@@ -1,7 +1,7 @@
 # encoding:utf8
 from django.shortcuts import render, get_object_or_404
-from models import Funcionario
-from forms import FuncionarioForm
+from funcionarios.models import Funcionario
+from funcionarios.forms import FuncionarioForm
 from enderecos.forms import EnderecoForm
 
 template_home = 'funcionarios/home.html'

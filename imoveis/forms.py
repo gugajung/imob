@@ -1,6 +1,6 @@
 __author__ = 'gpzim98'
 from django import forms
-from models import Imovel, ContratoLocacao
+from imoveis.models import Imovel, ContratoLocacao
 from django.forms import ModelForm
 from imoveis.models import ContratoAdministrativo, LaudoVistoria
 
@@ -23,8 +23,10 @@ class ContratoAdministrativoForm(ModelForm):
     class Meta:
         model = ContratoAdministrativo
         fields = ['imovel', 'inicio_contrato', 'termino_contrato',  'empresa']
+        exclude = ['*']
 
 
 class LaudoVistoriaForm(ModelForm):
     class Meta:
         model = LaudoVistoria
+        exclude = ['*']

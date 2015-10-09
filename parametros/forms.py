@@ -1,7 +1,8 @@
 from django import forms
-from models import ParametrosGerais
+from parametros.models import ParametrosGerais
 
 
 class FormParametrosGerais(forms.ModelForm):
     class Meta:
         model = ParametrosGerais
+        exclude = ['*']

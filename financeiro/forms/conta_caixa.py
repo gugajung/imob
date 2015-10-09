@@ -5,6 +5,7 @@ from financeiro.models.conta_caixa import ContaCaixa
 class ContaCaixaForm(forms.ModelForm):
     class Meta:
         model = ContaCaixa
+        exclude = ['*']
 
 
 

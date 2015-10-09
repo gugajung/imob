@@ -1,14 +1,14 @@
 {% extends "template_relatorio_base.html" %}
 {% load bootstrap %}
 {% block titulo %}
-   Alfredo imóveis - Títulos a pagar e receber
+   Imob - Títulos a pagar e receber
 {% endblock %}
 
 {% block conteudo %}
     <div class="row">
         <div class="col-md-8">
             <h1>Contrato de locação</h1>
-            <h3>Alfredo imóveis</h3>
+            <h3>Imob</h3>
             Número do contrato: {{contrato.id}}<br/>
             Vigência: {{contrato.inicio_contrato}} até {{contrato.termino_contrato}}<br/>
             Data da emissão: {{contrato.data_emissao_contrato}}<br/>

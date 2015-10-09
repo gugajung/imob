@@ -2,7 +2,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from imoveis.models import Imovel, RescisaoContrato
 from enderecos.forms import EnderecoForm
-from forms import ImovelForm, ContratoLocacaoForm,\
+from imoveis.forms import ImovelForm, ContratoLocacaoForm,\
     ContratoAdministrativoForm, LaudoVistoriaForm
 from funcionarios.models import Funcionario
 from datetime import datetime, date
@@ -11,7 +11,7 @@ from imoveis.models import ContratoLocacao,\
 from financeiro.models.titulo import Titulo, exclui_parcelas_aberto_contrato_locacao
 from parametros.models import ParametrosGerais
 from clientes.models import Cliente
-from alfredo_imoveis.views import busca_configuracoes
+from project.views import busca_configuracoes
 from funcoes import month_between, incrementa_mes
 today = date.today()
 

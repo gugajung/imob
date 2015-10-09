@@ -1,12 +1,12 @@
 # encoding: utf8
 from django.shortcuts import render, get_object_or_404
-from models import Cliente
-from forms import ClienteForm
+from clientes.models import Cliente
+from clientes.forms import ClienteForm
 from enderecos.forms import EnderecoForm
 from datetime import datetime, date
 from imoveis.models import Imovel
 from funcionarios.models import Funcionario
-from alfredo_imoveis.views import busca_configuracoes
+from project.views import busca_configuracoes
 from parametros.models import ParametrosGerais
 
 today = date.today()

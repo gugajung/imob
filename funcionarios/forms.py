@@ -1,6 +1,6 @@
 __author__ = 'gpzim98'
 from django import forms
-from models import Funcionario
+from funcionarios.models import Funcionario
 
 class FuncionarioForm(forms.ModelForm):
     class Meta:

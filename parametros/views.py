@@ -1,8 +1,8 @@
 # encoding:utf8
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from forms import FormParametrosGerais
-from models import ParametrosGerais
+from parametros.forms import FormParametrosGerais
+from parametros.models import ParametrosGerais
 # Create your views here.
 
 template_parametros = 'parametros/home.html'

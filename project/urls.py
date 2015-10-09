@@ -1,6 +1,6 @@
 # encoding:utf-8
 from django.conf.urls import patterns, include, url
-import project.settings
+from project import settings
 from django.contrib import admin
 admin.autodiscover()
 
