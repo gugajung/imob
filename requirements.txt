@@ -6,3 +6,4 @@ django-grappelli==2.5.3
 psycopg2==2.5.2
 sqlparse==0.1.11
 Pillow
+python-dateutil
