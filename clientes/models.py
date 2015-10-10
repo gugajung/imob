@@ -63,7 +63,7 @@ class Cliente(models.Model):
     referencias_pessoais = models.TextField(null=True, blank=True, verbose_name=u'Referências pessoais')
     observacoes = models.TextField(null=True, blank=True, verbose_name=u'Observações')
     
-    def __unicode__(self):
+    def __str__(self):
         return self.nome + " - " + "Cod:" + str(self.id) 
 
     class Meta:

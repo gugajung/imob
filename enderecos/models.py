@@ -10,7 +10,7 @@ class Cidade(models.Model):
     uf = models.CharField(max_length=2, null=False, blank=False)
     pais = models.CharField(max_length=50,  null=False, blank=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nome + " - " + self.uf
 
     class Meta:
@@ -28,7 +28,7 @@ class Bairro(models.Model):
         verbose_name='Bairro', help_text='Informe o nome do bairro')
     cidade = models.ForeignKey(Cidade, null=False, blank=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nome + " - " + self.cidade.nome
 
     def get_absolute_url(self):
@@ -58,7 +58,7 @@ class Endereco(models.Model):
     complemento_comercial = models.CharField(
         max_length=100, null=True, blank=True, verbose_name=u'Complemento')
 
-    def __unicode__(self):
+    def __str__(self):
         return u'' + self.rua + u' - ' + self.bairro.nome
 
     class Meta:

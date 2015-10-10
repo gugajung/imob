@@ -56,7 +56,7 @@ class Imovel(models.Model):
     pavimentos = models.IntegerField(
         verbose_name=u'Pavimentos', null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.proprietario.nome + u'[Cód. ' + \
             str(self.proprietario.id) + '] - ' + self.descricao[:50:] + \
             u'[Cód.' + str(self.id) + '] - ' + self.endereco.rua
@@ -110,7 +110,7 @@ class ContratoLocacao(models.Model):
     gerou_receber = models.BooleanField(
         verbose_name='Já gerou contas a receber', default=False, editable=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.imovel.descricao[:15:] + \
             ' - ' + self.locatario.nome + u'Cód. Contrato: ' + str(self.id)
 
@@ -129,7 +129,7 @@ class ContratoAdministrativo(models.Model):
     empresa = models.ForeignKey(
         Empresa, verbose_name='Filial responsável')
 
-    def __unicode__(self):
+    def __str__(self):
         return str(self.imovel.descricao) + \
             u' - Início: ' + unicode(self.inicio_contrato) + \
             u' - Término:' + unicode(self.termino_contrato)
@@ -240,7 +240,7 @@ class LaudoVistoria(models.Model):
     observacao = models.TextField(
         verbose_name='Observações sobre a vistoria', null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return u'' + self.imovel.descricao + u' Data vistoria: ' +\
             unicode(self.data_vistoria.strftime('%d-%m-%Y'))
 

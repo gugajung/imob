@@ -16,7 +16,7 @@ class Empresa(models.Model):
     ativo = models.NullBooleanField(null=False, blank=False, default=True)
     endereco = models.ForeignKey(Endereco)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nome
 
     class Meta:

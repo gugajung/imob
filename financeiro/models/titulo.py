@@ -173,7 +173,7 @@ class Titulo(models.Model):
         verbose_name_plural = 'Títulos'
         ordering = ['descricao']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.descricao[:20:] + self.vencimento.strftime('%d/%m/%y')\
             + ' ' + \
             str(self.pagamento_parcial) + '/' + str(
@@ -235,7 +235,7 @@ class Recibo(models.Model):
     usuario = models.ForeignKey(User)
     descricao = models.TextField()
 
-    def __unicode__(self):
+    def __str__(self):
         return u'Título:' + self.titulo.descricao + u' Usuário que emitiu:' +\
             self.usuario.username + u' na data:' + self.data_cadastro.strftime(
                 '%m/%d/%y %H:%M:%S')

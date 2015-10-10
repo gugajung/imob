@@ -20,7 +20,7 @@ class Funcionario(models.Model):
     data_saida = models.DateField(null=True, blank=True)
     usuario = models.OneToOneField(User, verbose_name=u'Usuário')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nome
 
 def retorna_empresa_funcionario(funcionario):
