@@ -18,4 +18,4 @@ class ParametrosGerais(models.Model):
         verbose_name='Conta caixa para financeiro de contratos')
 
     def __str__(self):
-        return unicode(self.id) + " - " + u"Parâmetros "
+        return str(self.id) + " - " + u"Parâmetros "
