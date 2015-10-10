@@ -242,7 +242,7 @@ class LaudoVistoria(models.Model):
 
     def __str__(self):
         return u'' + self.imovel.descricao + u' Data vistoria: ' +\
-            unicode(self.data_vistoria.strftime('%d-%m-%Y'))
+            str(self.data_vistoria.strftime('%d-%m-%Y'))
 
     def get_absolute_url(self):
         return reverse(
