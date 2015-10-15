@@ -5,10 +5,19 @@
 {% endblock %}
 
 {% block conteudo %}
+    <div class="row">
+        <div class="col-md-1">
+                 <h1>Imob</h1>
+        </div>
+        <div class="col-md-11">
+            <h3>Gestão on-line de Imobiliárias</h3>
+        </div>
+
+    </div>
 
        <div class="row">
             <div class="col-md-8">
-                 <img src="{{STATIC_URL}}bootstrap/img/logo.png" class="img-responsive">
+            <img src="{{STATIC_URL}}bootstrap/img/banner.jpg" style="border-radius: 10px;" width="100%">
             </div>
             {% if form %}
                 <div class="col-md-4">

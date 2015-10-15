@@ -1,0 +1,115 @@
+{% extends "template_base.html" %}
+{% load bootstrap %}
+
+{% block titulo %}
+   Alfredo imóveis - Recibos
+{% endblock %}
+
+{% block conteudo %}
+
+    {% if mensagem %}
+        <br/>
+        <div class="alert alert-info fade in">
+            {{mensagem}}
+        </div>
+    {% endif%}
+
+    {% if erros %}
+    <br/>
+    <div class="alert alert-danger fade in">
+        {{erros}}
+    </div>
+    {% endif%}
+
+<div class="col-sm-12">
+    <h1>Edição de recibo</h1>
+        <form method="POST" action="{% url 'app_financeiro_titulo_salvar' titulo.id %}">
+            {% csrf_token %}
+            {% include 'financeiro/titulo/form_titulo.html' %}
+            <br/>
+            <br/>
+            {% if modo == 'EDICAO' %}
+                <p align="left"><button type="submit" class="btn btn-info">Salvar</button></p>
+            {% else %}
+                {% if titulo.liquidado != True %}
+                    <a href="{% url 'app_financeiro_titulo_editar' titulo.id %}" class="btn btn-info">Editar</a>
+                {% endif %}
+            {% endif %}
+        </form>
+            <br>
+            
+</div>
+            <div class="col-sm-8">
+                <div class="well">
+                    {% if titulo.liquidado %}
+                        <b>Este documento foi liquidado em:  {{titulo.data_quitacao}}</b><br>
+                        <b>Este documento foi pago com {{titulo.dias_atraso}} dias de atraso</b><br>
+                    {% else %}
+                        <b>Este documento não esta quitado; dias de atraso deste documento: {{titulo.dias_atraso}} dias</b><br>
+                    {% endif %}
+                    <b>COPASA: </b>{{titulo.valor_copasa|floatformat:2}}<br>
+                    <b>CEMIG: </b>{{titulo.valor_cemig|floatformat:2}}<br>
+                    <b>Multa: </b>{{titulo.multa|floatformat:2}}<br>
+                    <b>Juros: </b>{{titulo.juros|floatformat:2}}<br>
+                    <b>Encargos: </b>{{titulo.valor_encargos|floatformat:2}}<br>
+                    {% if titulo.valor_condominio_pago %}
+                        <b>Condomínio: </b>{{titulo.valor_condominio_pago|floatformat:2}}<br>
+                    {% else %}
+                        <b>Condomínio: </b>{{titulo.contrato_locacao.imovel.valor_condominio|floatformat:2}}<br>
+                    {% endif %}
+                    
+                   <!-- {% if titulo.contrato_locacao.imovel.iptu_vencido %}
+                            <b>IPTU pendente: </b>{{titulo.contrato_locacao.imovel.valor_iptu}}<br>
+                    {% endif %}
+
+                    {% if titulo.valor_iptu_pago > 0 %}
+                            <b>IPTU pago: </b>{{titulo.valor_iptu_pago}}<br>
+                    {% endif %} -->
+
+                    <b>Valor restante a pagar: </b>{{titulo.valor_restante|floatformat:2}}<br>
+                    <b>TOTAL: </b>{{titulo.total|floatformat:2}}<br>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <a href="{% url 'app_financeiro_titulo_recibo' titulo.id %}" type="submit" class="btn btn-success">        Recibo locador
+                </a>
+                <a href="{% url 'app_financeiro_titulo_recibo' titulo.id %}" type="submit" class="btn btn-info">        Recibo locatário
+                </a>
+                {% if titulo.liquidado != True %}
+                <div class="btn-group">
+                      <button type="button" class="btn btn-danger">Cartas de cobrança</button>
+                      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                            <span class="sr-only">Emitir</span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                            <li><a href="{% url 'app_financeiro_titulo_carta_cobranca_modelo_1' titulo.id %}">Modelo I</a></li>
+                            <li><a href="{% url 'app_financeiro_titulo_carta_cobranca_modelo_2' titulo.id %}">Modelo II</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{% url 'app_financeiro_titulo_carta_cobranca_modelo_3' titulo.id %}">Modelo III</a></li>
+                      </ul>
+                </div>
+
+
+                {% include 'financeiro/titulo/form_abater_titulo.html' %}
+                {% include 'financeiro/titulo/modalExcluiTitulo.html' %}
+            {% endif %}
+            <br>
+            <br>
+            <br>
+            {% if recibos %} 
+                <br><b>Recibos emitidos:</b>
+                {% for recibo in recibos %}
+                    <a href="{% url 'app_financeiro_titulo_recupera_recibo' recibo.id %}">
+                        <br>{{recibo.titulo.descricao|slice:":20"}}...  Emitido por: {{recibo.usuario.username}} Dia: {{recibo.data_cadastro}}
+                    </a>
+                {% endfor %}
+            {% else %}
+                <h3>Nenhum recibo foi emitido para este título até agora</h3>
+            {% endif %}
+            <br>
+            <br>
+            <br>
+        </div>
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% load bootstrap %}
+<div class="row">
+
+    <div class="col-lg-12">
+        <h1>Criar/editar funcionários</h1>
+        <br/>
+        <form action="{% url 'app_funcionario_update' funcionario.id %}" method="POST">
+            {% csrf_token %}
+            {% include 'funcionarios/campos_form_funcionario.html' %}
+            <a href="{% url 'app_funcionario_editar' funcionario.id %}" class="btn btn-info">Editar</a>
+            {% include 'funcionarios/modalExcluiFuncionario.html' %}
+        </form>
+    </div>
+</div>

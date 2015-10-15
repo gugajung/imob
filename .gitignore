@@ -1,3 +1,10 @@
 *.pyc
+<<<<<<< HEAD
 vpython27
 *.sqlite3
+=======
+static
+*.swp
+*.db
+*migrations
+>>>>>>> 0440c5ac9efe30145ca833ee3c2176f32c0d7b04

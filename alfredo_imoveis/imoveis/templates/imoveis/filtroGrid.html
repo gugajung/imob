@@ -1,0 +1,48 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Consultar imóveis</h3>
+    </div>
+    <div class="panel-body">
+        <form method="POST" 
+                  action="{% url 'app_imoveis_filtrar' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-3">
+                    <p><input class="form-control" type="text" name="codigo" placeholder="Código"></p>
+                    <p><input class="form-control" type="text" name="descricao" placeholder="Descrição"></p>
+                    <p>
+                        <input class="form-control" type="text" name="proprietario" placeholder="Nome do proprietário">
+                    </p>
+                    
+                    <br/>
+                </div> 
+
+                <div class="col-md-3">
+                    <p><input class="form-control" type="text" name="rua" placeholder="Rua"></p>
+                    <p><input class="form-control" type="text" name="bairro" placeholder="Bairro"></p>
+                    <p><input class="form-control" type="text" name="cidade" placeholder="Cidade"></p>
+                </div>
+
+                <div class="col-md-3">
+                    <label> 
+                      <input type="checkbox" name="ativo">   Inativos 
+                    </label>
+                    
+                </div>
+
+                <div class="col-md-3">
+                    <label> Mês do cadastro </label>
+                    <br/>De<input class="form-control" type="date" name="dataini">
+                    <br/>
+                    Até<input class="form-control" type="date" name="datafim">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-info">Pesquisar</button>
+            <label>
+                <input type="checkbox" name="relatorio">   Gerar relatório
+            </label>
+            
+        </form>
+    </div>
+</div>

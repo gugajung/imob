@@ -1,0 +1,32 @@
+{% extends "template_base.html" %}
+{% load bootstrap %}
+{% block titulo %}
+   Alfredo Imóveis
+{% endblock %}
+
+{% block conteudo %}
+
+       <div class="row">
+            <div class="col-md-8">
+                 <img src="{{STATIC_URL}}bootstrap/img/logo.png" class="img-responsive">
+            </div>
+            {% if form %}
+                <div class="col-md-4">
+                    <br>
+                    <form method="POST" action="." class="form-group">
+                        {% csrf_token %}
+                        {{form|bootstrap}}
+                        <input type="submit" class="btn btn-primary"/>
+                    </form>
+                </div>
+            {% else %}
+            <div class="col-md-4">
+                    <br>
+                    <a href="{% url 'main_home' %}">
+                        <button type="button" class="btn btn-primary">Acessar</button>
+                    </a>
+            </div>
+            {% endif %}
+       </div>
+{% endblock %}
+

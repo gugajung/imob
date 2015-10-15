@@ -1,0 +1,37 @@
+{% extends 'template_relatorio_base.html' %}
+ {% block conteudo %}
+        {% for cliente in clientes %}
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="{{MEDIA_URL}}{{logo}}" width="200" height="150">
+                    <h2> Alfredo Imóveis</h2>
+                </div>
+                <div class="col-sm-6">
+                    <h2><img src="{{STATIC_URL}}bootstrap/img/img_aniv1.jpg" width="350" height="250"></h2>
+                </div>
+            </div>
+
+            <p>
+                {{cliente.nome}}<br>
+                {{cliente.endereco.rua}} {{cliente.endereco.numero}} {{cliente.endereco.complemento}}<br>
+                {{cliente.endereco.bairro.cidade.nome}} - {{cliente.endereco.bairro.cidade.uf}}<br>
+            </p>
+
+            <br>
+             <h4 align="justify">
+                
+            {{texto_carta|safe}}
+
+            </h4>
+
+            <br>
+             <h4>Alfredo Imóveis.</h4>
+                    
+             <h4>Montes Claros {{cliente.data_nascimento|date:'d'}} de {{cliente.data_nascimento|date:'F'}} de 
+             {{data.year}}</h4>
+             
+
+        {% endfor%}
+{% endblock %}        

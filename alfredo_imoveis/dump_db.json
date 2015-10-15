@@ -1,0 +1,1040 @@
+[
+{
+  "pk": 1, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "logentry", 
+    "name": "log entry", 
+    "app_label": "admin"
+  }
+},
+{
+  "pk": 2, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "permission", 
+    "name": "permission", 
+    "app_label": "auth"
+  }
+},
+{
+  "pk": 3, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "group", 
+    "name": "group", 
+    "app_label": "auth"
+  }
+},
+{
+  "pk": 4, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "user", 
+    "name": "user", 
+    "app_label": "auth"
+  }
+},
+{
+  "pk": 5, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "contenttype", 
+    "name": "content type", 
+    "app_label": "contenttypes"
+  }
+},
+{
+  "pk": 6, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "session", 
+    "name": "session", 
+    "app_label": "sessions"
+  }
+},
+{
+  "pk": 7, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "migrationhistory", 
+    "name": "migration history", 
+    "app_label": "south"
+  }
+},
+{
+  "pk": 8, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "cidade", 
+    "name": "Munic\u00edpio", 
+    "app_label": "enderecos"
+  }
+},
+{
+  "pk": 9, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "bairro", 
+    "name": "bairro", 
+    "app_label": "enderecos"
+  }
+},
+{
+  "pk": 10, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "endereco", 
+    "name": "endereco", 
+    "app_label": "enderecos"
+  }
+},
+{
+  "pk": 11, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "empresa", 
+    "name": "empresa", 
+    "app_label": "empresas"
+  }
+},
+{
+  "pk": 12, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "cliente", 
+    "name": "cliente", 
+    "app_label": "clientes"
+  }
+},
+{
+  "pk": 13, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "imovel", 
+    "name": "imovel", 
+    "app_label": "imoveis"
+  }
+},
+{
+  "pk": 14, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "contratolocacao", 
+    "name": "contrato locacao", 
+    "app_label": "imoveis"
+  }
+},
+{
+  "pk": 15, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "contratoadministrativo", 
+    "name": "contrato administrativo", 
+    "app_label": "imoveis"
+  }
+},
+{
+  "pk": 16, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "laudovistoria", 
+    "name": "laudo vistoria", 
+    "app_label": "imoveis"
+  }
+},
+{
+  "pk": 17, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "rescisaocontrato", 
+    "name": "rescisao contrato", 
+    "app_label": "imoveis"
+  }
+},
+{
+  "pk": 18, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "contacaixa", 
+    "name": "conta caixa", 
+    "app_label": "financeiro"
+  }
+},
+{
+  "pk": 19, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "titulo", 
+    "name": "T\u00edtulo", 
+    "app_label": "financeiro"
+  }
+},
+{
+  "pk": 20, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "recibo", 
+    "name": "Recibo", 
+    "app_label": "financeiro"
+  }
+},
+{
+  "pk": 21, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "parametrosgerais", 
+    "name": "parametros gerais", 
+    "app_label": "parametros"
+  }
+},
+{
+  "pk": 22, 
+  "model": "contenttypes.contenttype", 
+  "fields": {
+    "model": "funcionario", 
+    "name": "funcionario", 
+    "app_label": "funcionarios"
+  }
+},
+{
+  "pk": "kx7d1gy251w3dr9btslwpdj8yryxw0pp", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2015-07-05T13:00:38.460Z", 
+    "session_data": "MzI1ZDkxNjMyZTFmNTc4M2FlNWM1ZmE3NWZmYTg4ZWY5N2E1MDA0ODp7Im5vbWVfZW1wcmVzYSI6Ikltb2JpbGlcdTAwZTFyaWEiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjF9"
+  }
+},
+{
+  "pk": 1, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2015-06-21T12:53:04.488Z", 
+    "app_name": "enderecos", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 2, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2015-06-21T12:53:04.784Z", 
+    "app_name": "empresas", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 3, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2015-06-21T12:53:05.210Z", 
+    "app_name": "clientes", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 4, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2015-06-21T12:53:06.703Z", 
+    "app_name": "imoveis", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 5, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2015-06-21T12:53:07.813Z", 
+    "app_name": "financeiro", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 6, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2015-06-21T12:53:08.260Z", 
+    "app_name": "parametros", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 7, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2015-06-21T12:53:08.790Z", 
+    "app_name": "funcionarios", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 1, 
+  "model": "enderecos.cidade", 
+  "fields": {
+    "pais": "Brasil", 
+    "uf": "MG", 
+    "nome": "Montes Claros"
+  }
+},
+{
+  "pk": 1, 
+  "model": "enderecos.bairro", 
+  "fields": {
+    "cidade": 1, 
+    "nome": "Jardim Palmeiras"
+  }
+},
+{
+  "pk": 1, 
+  "model": "enderecos.endereco", 
+  "fields": {
+    "complemento": "", 
+    "bairro": 1, 
+    "rua": "Av: Manoel Joaquim de Melo", 
+    "rua_comercial": "", 
+    "numero": 0, 
+    "numero_comercial": 0, 
+    "cep": "33339900", 
+    "cep_comercial": "", 
+    "bairro_comercial": null, 
+    "complemento_comercial": ""
+  }
+},
+{
+  "pk": 2, 
+  "model": "enderecos.endereco", 
+  "fields": {
+    "complemento": "", 
+    "bairro": 1, 
+    "rua": "Av: Manoel Joaquim de Melo", 
+    "rua_comercial": "", 
+    "numero": 0, 
+    "numero_comercial": null, 
+    "cep": "33.333-333", 
+    "cep_comercial": "", 
+    "bairro_comercial": null, 
+    "complemento_comercial": ""
+  }
+},
+{
+  "pk": 1, 
+  "model": "empresas.empresa", 
+  "fields": {
+    "logo": "Logo/logo.png", 
+    "cnpj": "0987654321", 
+    "endereco": 1, 
+    "ativo": true, 
+    "nome": "Imobili\u00e1ria"
+  }
+},
+{
+  "pk": 1, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_logentry", 
+    "name": "Can add log entry", 
+    "content_type": 1
+  }
+},
+{
+  "pk": 2, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_logentry", 
+    "name": "Can change log entry", 
+    "content_type": 1
+  }
+},
+{
+  "pk": 3, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_logentry", 
+    "name": "Can delete log entry", 
+    "content_type": 1
+  }
+},
+{
+  "pk": 4, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_permission", 
+    "name": "Can add permission", 
+    "content_type": 2
+  }
+},
+{
+  "pk": 5, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_permission", 
+    "name": "Can change permission", 
+    "content_type": 2
+  }
+},
+{
+  "pk": 6, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_permission", 
+    "name": "Can delete permission", 
+    "content_type": 2
+  }
+},
+{
+  "pk": 7, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_group", 
+    "name": "Can add group", 
+    "content_type": 3
+  }
+},
+{
+  "pk": 8, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_group", 
+    "name": "Can change group", 
+    "content_type": 3
+  }
+},
+{
+  "pk": 9, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_group", 
+    "name": "Can delete group", 
+    "content_type": 3
+  }
+},
+{
+  "pk": 10, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_user", 
+    "name": "Can add user", 
+    "content_type": 4
+  }
+},
+{
+  "pk": 11, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_user", 
+    "name": "Can change user", 
+    "content_type": 4
+  }
+},
+{
+  "pk": 12, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_user", 
+    "name": "Can delete user", 
+    "content_type": 4
+  }
+},
+{
+  "pk": 13, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_contenttype", 
+    "name": "Can add content type", 
+    "content_type": 5
+  }
+},
+{
+  "pk": 14, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_contenttype", 
+    "name": "Can change content type", 
+    "content_type": 5
+  }
+},
+{
+  "pk": 15, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_contenttype", 
+    "name": "Can delete content type", 
+    "content_type": 5
+  }
+},
+{
+  "pk": 16, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_session", 
+    "name": "Can add session", 
+    "content_type": 6
+  }
+},
+{
+  "pk": 17, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_session", 
+    "name": "Can change session", 
+    "content_type": 6
+  }
+},
+{
+  "pk": 18, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_session", 
+    "name": "Can delete session", 
+    "content_type": 6
+  }
+},
+{
+  "pk": 19, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_migrationhistory", 
+    "name": "Can add migration history", 
+    "content_type": 7
+  }
+},
+{
+  "pk": 20, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_migrationhistory", 
+    "name": "Can change migration history", 
+    "content_type": 7
+  }
+},
+{
+  "pk": 21, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_migrationhistory", 
+    "name": "Can delete migration history", 
+    "content_type": 7
+  }
+},
+{
+  "pk": 22, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_cidade", 
+    "name": "Can add Munic\u00edpio", 
+    "content_type": 8
+  }
+},
+{
+  "pk": 23, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_cidade", 
+    "name": "Can change Munic\u00edpio", 
+    "content_type": 8
+  }
+},
+{
+  "pk": 24, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_cidade", 
+    "name": "Can delete Munic\u00edpio", 
+    "content_type": 8
+  }
+},
+{
+  "pk": 25, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_bairro", 
+    "name": "Can add bairro", 
+    "content_type": 9
+  }
+},
+{
+  "pk": 26, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_bairro", 
+    "name": "Can change bairro", 
+    "content_type": 9
+  }
+},
+{
+  "pk": 27, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_bairro", 
+    "name": "Can delete bairro", 
+    "content_type": 9
+  }
+},
+{
+  "pk": 28, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_endereco", 
+    "name": "Can add endereco", 
+    "content_type": 10
+  }
+},
+{
+  "pk": 29, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_endereco", 
+    "name": "Can change endereco", 
+    "content_type": 10
+  }
+},
+{
+  "pk": 30, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_endereco", 
+    "name": "Can delete endereco", 
+    "content_type": 10
+  }
+},
+{
+  "pk": 31, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_empresa", 
+    "name": "Can add empresa", 
+    "content_type": 11
+  }
+},
+{
+  "pk": 32, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_empresa", 
+    "name": "Can change empresa", 
+    "content_type": 11
+  }
+},
+{
+  "pk": 33, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_empresa", 
+    "name": "Can delete empresa", 
+    "content_type": 11
+  }
+},
+{
+  "pk": 34, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_cliente", 
+    "name": "Can add cliente", 
+    "content_type": 12
+  }
+},
+{
+  "pk": 35, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_cliente", 
+    "name": "Can change cliente", 
+    "content_type": 12
+  }
+},
+{
+  "pk": 36, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_cliente", 
+    "name": "Can delete cliente", 
+    "content_type": 12
+  }
+},
+{
+  "pk": 37, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_imovel", 
+    "name": "Can add imovel", 
+    "content_type": 13
+  }
+},
+{
+  "pk": 38, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_imovel", 
+    "name": "Can change imovel", 
+    "content_type": 13
+  }
+},
+{
+  "pk": 39, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_imovel", 
+    "name": "Can delete imovel", 
+    "content_type": 13
+  }
+},
+{
+  "pk": 40, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_contratolocacao", 
+    "name": "Can add contrato locacao", 
+    "content_type": 14
+  }
+},
+{
+  "pk": 41, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_contratolocacao", 
+    "name": "Can change contrato locacao", 
+    "content_type": 14
+  }
+},
+{
+  "pk": 42, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_contratolocacao", 
+    "name": "Can delete contrato locacao", 
+    "content_type": 14
+  }
+},
+{
+  "pk": 43, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_contratoadministrativo", 
+    "name": "Can add contrato administrativo", 
+    "content_type": 15
+  }
+},
+{
+  "pk": 44, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_contratoadministrativo", 
+    "name": "Can change contrato administrativo", 
+    "content_type": 15
+  }
+},
+{
+  "pk": 45, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_contratoadministrativo", 
+    "name": "Can delete contrato administrativo", 
+    "content_type": 15
+  }
+},
+{
+  "pk": 46, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_laudovistoria", 
+    "name": "Can add laudo vistoria", 
+    "content_type": 16
+  }
+},
+{
+  "pk": 47, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_laudovistoria", 
+    "name": "Can change laudo vistoria", 
+    "content_type": 16
+  }
+},
+{
+  "pk": 48, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_laudovistoria", 
+    "name": "Can delete laudo vistoria", 
+    "content_type": 16
+  }
+},
+{
+  "pk": 49, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_rescisaocontrato", 
+    "name": "Can add rescisao contrato", 
+    "content_type": 17
+  }
+},
+{
+  "pk": 50, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_rescisaocontrato", 
+    "name": "Can change rescisao contrato", 
+    "content_type": 17
+  }
+},
+{
+  "pk": 51, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_rescisaocontrato", 
+    "name": "Can delete rescisao contrato", 
+    "content_type": 17
+  }
+},
+{
+  "pk": 52, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_contacaixa", 
+    "name": "Can add conta caixa", 
+    "content_type": 18
+  }
+},
+{
+  "pk": 53, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_contacaixa", 
+    "name": "Can change conta caixa", 
+    "content_type": 18
+  }
+},
+{
+  "pk": 54, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_contacaixa", 
+    "name": "Can delete conta caixa", 
+    "content_type": 18
+  }
+},
+{
+  "pk": 55, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_titulo", 
+    "name": "Can add T\u00edtulo", 
+    "content_type": 19
+  }
+},
+{
+  "pk": 56, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_titulo", 
+    "name": "Can change T\u00edtulo", 
+    "content_type": 19
+  }
+},
+{
+  "pk": 57, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_titulo", 
+    "name": "Can delete T\u00edtulo", 
+    "content_type": 19
+  }
+},
+{
+  "pk": 58, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_recibo", 
+    "name": "Can add Recibo", 
+    "content_type": 20
+  }
+},
+{
+  "pk": 59, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_recibo", 
+    "name": "Can change Recibo", 
+    "content_type": 20
+  }
+},
+{
+  "pk": 60, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_recibo", 
+    "name": "Can delete Recibo", 
+    "content_type": 20
+  }
+},
+{
+  "pk": 61, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_parametrosgerais", 
+    "name": "Can add parametros gerais", 
+    "content_type": 21
+  }
+},
+{
+  "pk": 62, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_parametrosgerais", 
+    "name": "Can change parametros gerais", 
+    "content_type": 21
+  }
+},
+{
+  "pk": 63, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_parametrosgerais", 
+    "name": "Can delete parametros gerais", 
+    "content_type": 21
+  }
+},
+{
+  "pk": 64, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_funcionario", 
+    "name": "Can add funcionario", 
+    "content_type": 22
+  }
+},
+{
+  "pk": 65, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_funcionario", 
+    "name": "Can change funcionario", 
+    "content_type": 22
+  }
+},
+{
+  "pk": 66, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_funcionario", 
+    "name": "Can delete funcionario", 
+    "content_type": 22
+  }
+},
+{
+  "pk": 1, 
+  "model": "auth.user", 
+  "fields": {
+    "username": "admin", 
+    "first_name": "", 
+    "last_name": "", 
+    "is_active": true, 
+    "is_superuser": true, 
+    "is_staff": true, 
+    "last_login": "2015-06-21T12:53:21.147Z", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$12000$XQwAKBbHobx6$RJEWPoIHB0c6dsOW4g3Q9Tzl6JGCX8hChB22zTSh7wU=", 
+    "email": "asdf@asdf.com", 
+    "date_joined": "2015-06-21T12:53:00.020Z"
+  }
+},
+{
+  "pk": 1, 
+  "model": "parametros.parametrosgerais", 
+  "fields": {
+    "gerente": 1, 
+    "taxa_juros": "1.00", 
+    "clausula_contrato_adic": "asdf", 
+    "multa": "2.00", 
+    "conta_caixa": null, 
+    "texto_carta_aniv2": "asdf", 
+    "texto_carta_aniv3": "asdf", 
+    "texto_carta_aniv1": "asdf"
+  }
+},
+{
+  "pk": 1, 
+  "model": "funcionarios.funcionario", 
+  "fields": {
+    "data_entrada": "2015-06-21", 
+    "cargo": "Analista de Sistemas", 
+    "empresa": 1, 
+    "nome": "Gregory Campos Pacheco", 
+    "data_saida": null, 
+    "cpf": "098.765.432-21", 
+    "rg": "12345", 
+    "telefone": "(38)9999-9999", 
+    "usuario": 1, 
+    "endereco": 2, 
+    "pis": "1234", 
+    "email": "teste@email.com"
+  }
+},
+{
+  "pk": 1, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2015-06-21T12:57:07.796Z", 
+    "object_repr": "1 - Par\u00e2metros ", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 21
+  }
+},
+{
+  "pk": 2, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2015-06-21T12:59:07.094Z", 
+    "object_repr": "Montes Claros - MG", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 8
+  }
+},
+{
+  "pk": 3, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2015-06-21T12:59:08.983Z", 
+    "object_repr": "Jardim Palmeiras - Montes Claros", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 9
+  }
+},
+{
+  "pk": 4, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2015-06-21T12:59:19.713Z", 
+    "object_repr": "Av: Manoel Joaquim de Melo - Jardim Palmeiras", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 10
+  }
+},
+{
+  "pk": 5, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2015-06-21T12:59:30.383Z", 
+    "object_repr": "Imobili\u00e1ria", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 11
+  }
+}
+]
