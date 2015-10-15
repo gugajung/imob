@@ -10,6 +10,34 @@
     <br/>
 
     <div class="row">
+    	
+
+    <div class="col-xs-6 col-md-3">
+        <a href="{% url 'app_financeiro_conta_caixa_home' %}" class="thumbnail">
+            <p align="center">
+                <span class="label label-default">Plano de contas</span><br><br>
+                <img src="{{STATIC_URL}}bootstrap/img/plano_contas.png" alt="Plano de contas" width="128px" height="128px" />
+            </p>
+        </a>
+    </div>
+
+    <div class="col-xs-6 col-md-3">
+        <a href="{% url 'app_financeiro_caixa' %}" class="thumbnail">
+            <p align="center">
+                <span class="label label-default">Caixa</span><br><br>
+                <img src="{{STATIC_URL}}bootstrap/img/caixa.png" alt="Plano de contas" width="128px" height="128px" />
+            </p>
+        </a>
+    </div>
+
+    <div class="col-xs-6 col-md-3">
+        <a href="{% url 'app_financeiro_titulo_home' %}" class="thumbnail">
+            <p align="center">
+                <span class="label label-default">Contas a pagar e receber</span><br><br>
+                <img src="{{STATIC_URL}}bootstrap/img/receber.png" alt="Plano de contas" width="128px" height="128px" />
+            </p>
+        </a>
+    </div>
 
     </div>
 {% endblock %}

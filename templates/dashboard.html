@@ -14,5 +14,43 @@
     {% endif %}
 
     {% include 'painel_principal.html' %}
+
+    <p><b>Atalhos úteis</b></p>
+    <div class="alert alert-info" role="alert">
+    	<ul>
+    		<li><p>F2 - Novo cliente</p>	</li>
+    		<li><p>F4 - Novo imóvel</p>	</li>
+    		<li><p>F7 - Listagem de clientes</p>	</li>
+    		<li><p>F8 - Listagem de imóveis</p></li>
+    		<li><p>F9 - Contas a pagar e receber</p></li>
+    	</ul>
+    </div>
+
+   <div class="panel panel-default">
+        <div class="panel-body">
+            <h6 align="center">Sistema de gestão de imóveis e contratos de locação - Imob</h6>
+        </div>
+        <div class="panel-footer">
+            <h6 align="center">Web Jatz - Web and mobile systems solutions</h6>
+        </div>  
+    </div>
+
 {% endblock %}
 
+{% block shortcuts %}
+    case 113:
+        window.open("{% url 'app_clientes_novo'%}","_self")
+        break;
+    case 115:
+        window.open("{% url 'app_imoveis_add'%}","_self")
+        break;
+    case 118:
+        window.open("{% url 'app_clientes_home'%}","_self")
+        break;
+    case 119:
+        window.open("{% url 'app_imoveis_home'%}","_self")
+        break;
+    case 120:
+        window.open("{% url 'app_financeiro_home'%}","_self")
+        break;
+{% endblock %}   

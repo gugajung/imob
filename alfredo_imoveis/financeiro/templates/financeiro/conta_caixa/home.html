@@ -1,11 +1,11 @@
 {% extends "template_base.html" %}
 
 {% block titulo %}
-   Alfredo Imóveis - Clientes
+   Imob - Clientes
 {% endblock %}
 
 {% block conteudo %}
-<h1>Contas-caixa</h1>
+<h1>Plano de contas</h1>
     {% include 'financeiro/conta_caixa/filtroGrid.html' %}
     <br/>
     <div class="row">
@@ -14,7 +14,7 @@
             <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                        <h3>Contas-caixa
+                        <h3>Plano de contas
                             <a href="{% url 'app_financeiro_conta_caixa_add' %}">
                                 <input type="button" class="btn btn-sm btn-info" value="Novo"></a>
                         </h3>
@@ -64,7 +64,7 @@
                     {% if mensagem %}
                         {{mensagem}}
                     {% else %}
-                        Você ainda não possui <strong>contas-caixa</strong> cadastradas
+                        Você ainda não possui <strong>Plano de contas</strong> cadastradas
                         <a href="{% url 'app_financeiro_conta_caixa_add' %}">
                                 <input type="button" class="btn btn-sm btn-info" value="Novo"></a>
                     {% endif %}

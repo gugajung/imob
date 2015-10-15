@@ -1,1 +1,1 @@
-Alfredo Imóveis - Solução em gestão de Imobiliárias
+Imob - Solução em gestão de Imobiliárias

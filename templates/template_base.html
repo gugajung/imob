@@ -40,12 +40,6 @@
         function keydown(event) {
             keynum = event.which;
             switch(keynum) {
-            case 113:
-                window.open("{% url 'app_clientes_novo'%}","_self")
-                break;
-            case 118:
-                window.open("{% url 'app_clientes_home'%}","_self")
-                break;
             {% block shortcuts %}
             {% endblock %}   
             default:              
