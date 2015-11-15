@@ -1,5 +1,12 @@
 {% extends 'template_base.html'%}
 
+
+{% block shortcuts %}
+    case 113:
+        window.open("{% url 'app_funcionario_add'%}","_self")
+        break;
+{% endblock %}   
+
 {% block conteudo %}
 {% if funcionarios %}
     {% if mensagem %}
@@ -9,12 +16,29 @@
             </div>
     </div>
     {% endif %}
+
+<div class="row">
+    
+        <div class="col-lg-6">
+               <h1>Funcionários</h1>
+        </div>
+    
+        <div class="col-lg-6">
+            <p><b>Atalhos úteis</b></p>
+            <div class="alert alert-info" role="alert">
+                <ul>
+                    <li><p>F2 - Novo funcionário</p></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>Funcionários
-                    <a href="{% url 'app_funcionario_add' %}"><input type="button" class="btn btn-info" value="Novo funcionário"/></a></h3>
+                    <a href="{% url 'app_funcionario_add' %}"><input type="button" class="btn btn-info" value="Novo funcionário"/></a>
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">

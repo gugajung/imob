@@ -4,9 +4,29 @@
    Imob - Clientes
 {% endblock %}
 
+{% block shortcuts %}
+    case 113:
+        window.open("{% url 'app_clientes_novo'%}","_self")
+        break;
+{% endblock %}   
+
 {% block conteudo %}
-    <h1>Clientes</h1>
-    <br/>
+    <div class="row">
+    
+        <div class="col-lg-6">
+               <h1>Clientes</h1>
+        </div>
+    
+        <div class="col-lg-6">
+            <p><b>Atalhos úteis</b></p>
+            <div class="alert alert-info" role="alert">
+                <ul>
+                    <li><p>F2 - Novo cliente</p>    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
     {% include 'clientes/filtroGrid.html' %}
 
     <div class="row">

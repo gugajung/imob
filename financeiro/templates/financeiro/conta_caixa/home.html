@@ -4,8 +4,32 @@
    Imob - Clientes
 {% endblock %}
 
+{% block shortcuts %}
+    case 113:
+        window.open("{% url 'app_financeiro_conta_caixa_add'%}","_self")
+        break;
+{% endblock %}   
+
+
 {% block conteudo %}
-<h1>Plano de contas</h1>
+<div class="row">
+    
+        <div class="col-lg-6">
+               <h1>Plano de contas</h1>
+        </div>
+    
+        <div class="col-lg-6">
+            <p><b>Atalhos úteis</b></p>
+            <div class="alert alert-info" role="alert">
+                <ul>
+                    <li><p>F2 - Novo plano de contas</p></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
     {% include 'financeiro/conta_caixa/filtroGrid.html' %}
     <br/>
     <div class="row">

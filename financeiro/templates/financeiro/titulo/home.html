@@ -4,10 +4,29 @@
    Imob - Clientes
 {% endblock %}
 
-
+{% block shortcuts %}
+    case 113:
+        window.open("{% url 'app_financeiro_titulo_add'%}","_self")
+        break;
+{% endblock %}   
 
 {% block conteudo %}
-<h1>Impressão de recibos</h1>
+<div class="row">
+    
+        <div class="col-lg-6">
+               <h1>Titulos</h1>
+        </div>
+    
+        <div class="col-lg-6">
+            <p><b>Atalhos título</b></p>
+            <div class="alert alert-info" role="alert">
+                <ul>
+                    <li><p>F2 - Novo recibo</p></li>
+                </ul>
+            </div>
+
+        </div>
+</div>
 
 {% if mensagem_erro %}
     <div class="alert alert-dismissable alert-danger">
